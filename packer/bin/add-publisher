@@ -9,8 +9,11 @@ fi
 NAME=$1
 PASSWORD=$2
 
+echo Adding publishers
+
 curl "http://localhost:8087/v2/servers/_defaultServer_/publishers" \
     -X POST \
     -H "Content-Type: application/json" \
     -H "Accept: application/json" \
+    -u setupuser:fRonslayL3Id7ga6KqwXx \
     -d "{\"name\":\"$NAME\", \"password\":\"$PASSWORD\"}"

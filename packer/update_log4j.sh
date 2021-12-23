@@ -13,12 +13,12 @@ fi
 
 if [ -f ${WOWZA_PATH}/lib/log4j-core-2.13.3.jar ] || [ -f ${WOWZA_PATH}/lib/log4j-api-2.13.3.jar ]; then
   echo Found vulnerable log4j, needs patch
-  curl https://dlcdn.apache.org/logging/log4j/2.15.0/apache-log4j-2.15.0-bin.zip > apache-log4j-2.15.0-bin.zip
-  unzip apache-log4j-2.15.0-bin.zip
+  cd /home/ec2-user
+  unzip apache-log4j-2.17.0-bin.zip
   rm -f ${WOWZA_PATH}/lib/log4j-core-2.13.3.jar
   rm -f ${WOWZA_PATH}/lib/log4j-api-2.13.3.jar
-  mv -v apache-log4j-2.15.0-bin/log4j-core-2.15.0.jar ${WOWZA_PATH}/lib/
-  mv -v apache-log4j-2.15.0-bin/log4j-api-2.15.0.jar ${WOWZA_PATH}/lib/
+  mv -v apache-log4j-2.17.0-bin/log4j-core-2.17.0.jar ${WOWZA_PATH}/lib/
+  mv -v apache-log4j-2.17.0-bin/log4j-api-2.17.0.jar ${WOWZA_PATH}/lib/
   echo Patch successful
 else
   echo Did not find vulnerable log4j, patch not needed. Versions present:

@@ -32,6 +32,10 @@
         "source": "bin",
         "destination": "/home/ec2-user"
     }, {
+        "type": "file",
+        "source": "apache-log4j-2.17.0-bin.zip",
+        "destination": "/home/ec2-user/apache-log4j-2.17.0-bin.zip"
+    },{
         "type": "shell",
         "script": "update_log4j.sh",
         "execute_command": "{{ .Vars }} sudo -E bash -x '{{ .Path }}'"

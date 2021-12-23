@@ -1,7 +1,9 @@
 #!/usr/bin/env bash
 
+echo Enabling transcoder...
 curl "http://localhost:8087/v2/servers/_defaultServer_/vhosts/_defaultVHost_/applications/live/transcoder" \
     -X PUT \
     -H "Content-Type: application/json" \
     -H "Accept: application/json" \
+    -u setupuser:fRonslayL3Id7ga6KqwXx \
     -d "{\"liveStreamTranscoder\": \"transcoder\", \"templatesInUse\": \"gu-main.xml\"}"
