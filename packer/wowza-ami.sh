@@ -19,5 +19,3 @@ sleep 1m
 mv /tmp/admin.password /usr/local/WowzaStreamingEngine/conf
 chown -R wowza.wowza /usr/local/WowzaStreamingEngine/conf
 chmod -R o= /usr/local/WowzaStreamingEngine/conf
-
-cat /usr/local/WowzaStreamingEngine/conf/admin.password
